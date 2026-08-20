@@ -28,6 +28,42 @@ body {
     letter-spacing: 1px;
 }
 
+.login-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid #464646;
+    background-color: #101230;
+    min-height: 12vh;
+    padding: 1rem;
+}
+
+.login-btn > img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.login-btn {
+    font-family: 'DM Serif Display', Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.3rem;
+    border-radius: 4px;
+}
+
+.logout-btn {
+    font-family: 'DM Serif Display', Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    padding: 0.2rem 1rem;
+}
+
+.logout-btn:focus {
+    outline: 1px solid #E8FF47;
+}
+
 .task-form {
     display: flex;
     flex-direction: row;
