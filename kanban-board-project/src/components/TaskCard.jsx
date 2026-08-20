@@ -5,12 +5,20 @@ import binIcon from '../assets/bin-svgrepo-com.svg';
 export default function TaskCard({ task }) {
     const { handleUpdateTaskStatus, handleDeleteTask } = React.useContext(AppContext);
     const [showActions, setShowActions] = React.useState(false);
-
+    
+    const handleFormatDate = (timestamp) => {
+        if(!timestamp) return "";
+        const date = timestamp.toDate();
+        return date.toLocaleString("en-GB", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
+    }
 
     return (
         <>
             <div className="task-card" onMouseEnter={() => setShowActions(true)} onMouseLeave={() => setShowActions(false)}>
-                <p>{task.text}</p>
+                <div className="task-detail">
+                    <p>{task.text}</p>
+                    <span className="task-date">{handleFormatDate(task.createdAt)}</span>
+                </div>
                 {showActions && <div className="task-actions">
                     <div className="move-actions">
                         {task.status !== "to-do" && (

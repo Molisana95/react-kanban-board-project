@@ -112,6 +112,19 @@ body {
     border: 1px solid #fff;
 }
 
+.task-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.task-detail > span {
+    font-size: clamp(8px, 1.2vw, 10px);
+    text-align: right;
+}
+
 .task-actions {
     display: flex;
     flex-direction: row;
