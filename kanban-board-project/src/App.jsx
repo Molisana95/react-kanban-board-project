@@ -70,8 +70,8 @@ export default function App() {
                     <TaskForm onAddTask={handleAddTask} />
                 </div>
                 <div className="tasks-container">
-                    <Columns title="To Do" statusClass="to-do" />
-                    <Columns title="In Progress" statusClass="in-progress" />
+                    <Columns title="To do" statusClass="to-do" />
+                    <Columns title="In progress" statusClass="in-progress" />
                     <Columns title="Done" statusClass="done" />
                 </div>
             </div>

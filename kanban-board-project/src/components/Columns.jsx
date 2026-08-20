@@ -4,6 +4,7 @@ import { AppContext } from "../App";
 
 export default function Columns({ title, statusClass }) {
     const { tasks } = React.useContext(AppContext);
+    
     return (
         <div className={`list ${statusClass}`}>
             <h5>{title}</h5>
