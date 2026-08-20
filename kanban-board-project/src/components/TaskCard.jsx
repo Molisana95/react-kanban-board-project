@@ -4,7 +4,6 @@ import binIcon from '../assets/bin-svgrepo-com.svg';
 
 export default function TaskCard({ task }) {
     const { handleUpdateTaskStatus, handleDeleteTask } = React.useContext(AppContext);
-    const [showActions, setShowActions] = React.useState(false);
     
     const handleFormatDate = (timestamp) => {
         if(!timestamp) return "";
@@ -14,12 +13,12 @@ export default function TaskCard({ task }) {
 
     return (
         <>
-            <div className="task-card" onMouseEnter={() => setShowActions(true)} onMouseLeave={() => setShowActions(false)}>
+            <div className="task-card">
                 <div className="task-detail">
                     <p>{task.text}</p>
                     <span className="task-date">{handleFormatDate(task.createdAt)}</span>
                 </div>
-                {showActions && <div className="task-actions">
+                <div className="task-actions">
                     <div className="move-actions">
                         {task.status !== "to-do" && (
                             <button onClick={() => handleUpdateTaskStatus(task.id, "to-do")}>To Do</button>
@@ -34,7 +33,7 @@ export default function TaskCard({ task }) {
                     <button onClick={() => handleDeleteTask(task.id)}>
                         <img className="delete-icon" src={binIcon} alt="Delete" />
                     </button>
-                </div>}
+                </div>
             </div>
         </>
     )

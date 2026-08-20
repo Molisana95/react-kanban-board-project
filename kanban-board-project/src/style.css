@@ -19,7 +19,7 @@ body {
     gap: 2rem;
     border-bottom: 1px solid #464646;
     background-color: #101230;
-    height: 12vh;
+    min-height: 12vh;
     padding: 1rem;
 }
 
@@ -67,7 +67,7 @@ body {
     background-color: #101230;
     gap: 1rem;
     padding: 10px;
-    height: 80vh;
+    min-height: 80vh;
     margin: 0 auto;
 }
 
@@ -112,25 +112,16 @@ body {
     border: 1px solid #fff;
 }
 
-.task-detail {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.task-detail > span {
-    font-size: clamp(8px, 1.2vw, 10px);
-    text-align: right;
-}
-
 .task-actions {
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: space-between;
     gap: 0.5rem;
     margin-top: 1rem;
+}
+
+.task-card:hover .task-actions {
+    display: flex;
 }
 
 .task-actions button {
@@ -145,8 +136,21 @@ body {
     border-radius: 4px;
 }
 
-.task-actions button:hover {
+.task-card:hover .task-actions button:hover {
     background-color: #464646;
+}
+
+.task-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.task-detail > span {
+    font-size: clamp(8px, 1.2vw, 10px);
+    text-align: right;
 }
 
 .delete-icon {
@@ -160,4 +164,41 @@ body {
     flex-direction: row;
     justify-content: space-between;
     gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        height: auto;
+    }
+
+    .tasks-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .task-form {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .task-form > input {
+        flex: 1;                /* L'input occupa tutto lo spazio disponibile */
+        min-width: 200px;
+    }
+
+    .task-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .task-actions {
+        display: flex !important;
+        flex-wrap: wrap;
+    }
+
+
 }
