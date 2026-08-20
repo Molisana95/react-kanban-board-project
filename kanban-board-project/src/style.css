@@ -82,19 +82,25 @@ body {
     text-align: left;
 }
 
-.to-do > h5{
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.to-do > .list-header > h5{
     color: #E8FF47;
 }
 
-.in-progress > h5{
+.in-progress > .list-header >h5{
     color: #47E8FF;
 }
 
-.done > h5{
+.done > .list-header >h5{
     color: #47FF8C;
 }
 
-.list h5 {
+.list > .list-header {
     border-bottom: 1px solid #464646;
     padding: 0.2rem 0.5rem;
 }
