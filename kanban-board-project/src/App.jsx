@@ -110,7 +110,7 @@ export default function App() {
                 <p>Login do set up your personal tasks.</p>
                 <button className="login-btn" onClick={handleLogin}>
                     <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
-                    Accedi con Google
+                    Log in with Google
                 </button>
             </div>
         )
