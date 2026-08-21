@@ -55,10 +55,18 @@ body {
     border-radius: 4px;
 }
 
+.login-btn:hover {
+    cursor: pointer;
+}
+
 .logout-btn {
     font-family: 'DM Serif Display', Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
     padding: 0.2rem 1rem;
+}
+
+.logout-btn:hover {
+    cursor: pointer;
 }
 
 .logout-btn:focus {
@@ -96,6 +104,14 @@ body {
 
 .task-form > button:focus {
     outline: 1px solid #E8FF47;
+}
+
+.task-form > button:hover {
+    cursor: pointer;
+}
+
+.task-form > button:disabled {
+    cursor: not-allowed;
 }
 
 .tasks-container {
